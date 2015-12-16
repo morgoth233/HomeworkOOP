@@ -37,6 +37,18 @@ public class ComputerDemo {
 		System.out.println("Price: " + pc2.price);
 		System.out.println("Is notebook: " + pc2.isNotebook);
 		
+		Computer pc3 = new Computer(2006, 360, 250, 220);
+		Computer pc4 = new Computer(2007, 520, false, 500, 460, "Win 10");
+		
+		int result = pc3.comparePrices(pc4);
+		if (result == 0) {
+			System.out.println("cenite im sa ednakvi");
+		} else if (result < 0) {
+			System.out.println("1-q pc e po-skyp");
+		} else {
+			System.out.println("2-q pc e po-skyp");
+		}
+		
 	}
 
 }
