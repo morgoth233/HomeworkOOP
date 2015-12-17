@@ -17,7 +17,7 @@ public class StudentGroup {
 	}
 
 	void addStudent(Student s) {
-		if (s.subject == this.groupSubject && this.freePlaces > 0) {
+		if (s.subject.groupSubject.equals(this.groupSubject) && this.freePlaces > 0) {
 			for (int i = 0; i < this.students.length; i++) {
 				if (this.students[i] == null) {
 					this.students[i] = s;
@@ -37,7 +37,7 @@ public class StudentGroup {
 	
 	String theBestStudent(){
 		Student theBestStudent = students[0];
-		for (int i = 1; i < this.students.length && this.students[i] != null; i++) {
+		for (int i = 0; i < this.students.length && this.students[i] != null; i++) {
 			if (theBestStudent.grade < this.students[i].grade) {
 				theBestStudent = this.students[i];
 			}
@@ -49,8 +49,17 @@ public class StudentGroup {
 		int i = 0;
 		while(i<this.students.length && students[i] != null){
 			System.out.println("Name: " + this.students[i].name);
+			System.out.println("Years: " + this.students[i].getAge());
+			System.out.println("Subject: " + this.students[i].subject.groupSubject);
 			System.out.println("Grade: " + this.students[i].grade);
+			System.out.println("Money: " + this.students[i].money);
+			System.out.println("Year in College: " + this.students[i].yearInCollege);
+			System.out.println("");
+			System.out.println();
 			i++;
+		}
+		if (i==0) {
+			System.out.println("No students in the group");
 		}
 	}
 	

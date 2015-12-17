@@ -3,13 +3,21 @@ package College;
 public class Student {
 
 	public String name;
-	public String subject;
+	public StudentGroup subject;
 	double grade;
 	public int yearInCollege;
 	private int age;
 	public boolean isDegree;
-	private double money;
+	public double money;
 	
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	Student(){
 		grade = 4.0;
 		yearInCollege = 1;
@@ -17,7 +25,7 @@ public class Student {
 		money = 0;
 	}
 	
-	Student(String name, String subject, int age){
+	Student(String name, StudentGroup subject, int age){
 		this();
 		this.name = name;
 		this.subject = subject;
