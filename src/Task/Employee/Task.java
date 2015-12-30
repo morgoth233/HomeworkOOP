@@ -2,8 +2,8 @@ package Task.Employee;
 
 public class Task {
 
-	private String name;
-	private int workingHours;
+	protected String name;
+	protected int workingHours;
 
 	Task(String name, int workingHours) {
 		if (name.equals(" ")) {
@@ -24,13 +24,13 @@ public class Task {
 		return name;
 	}
 
-	public void setName(String name) {
-		if (name.equals(" ")) {
-			System.out.println("Invalid name");
-		} else {
-			this.name = name;
-		}
-	}
+//	public void setName(String name) {
+//		if (name.equals(" ")) {
+//			System.out.println("Invalid name");
+//		} else {
+//			this.name = name;
+//		}
+//	}
 
 	public int getWorkingHours() {
 		return workingHours;

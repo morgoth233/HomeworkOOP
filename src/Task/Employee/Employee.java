@@ -5,6 +5,7 @@ public class Employee {
 	private String name;
 	private Task currentTask;
 	private int hoursLeft;
+	private static AllWork allwork;
 
 	Employee(String name) {
 		if (name.equals(" ")) {
@@ -45,6 +46,18 @@ public class Employee {
 			this.hoursLeft = hoursLeft;
 		}
 	}
+	
+	public static AllWork getAllwork() {
+		return allwork;
+	}
+
+	public static void setAllwork(AllWork allwork) {
+		Employee.allwork = allwork;
+	}
+	
+	public void startWorkingDay(){
+		this.hoursLeft = 8;
+	}
 
 	public void work() {
 		if (this.getCurrentTask() != null) {
@@ -58,6 +71,8 @@ public class Employee {
 			System.out.println("The Employee has no task");
 		}
 	}
+
+
 
 	void showReport() {
 		System.out.println(this.getName());
