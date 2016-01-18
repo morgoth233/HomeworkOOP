@@ -3,8 +3,8 @@ package Task.Employee;
 public class AllWork {
 	
 	public Task[] tasks;
-	public int freePlacesForTasks;
-	public int currentUnassignedTask;
+	protected int freePlacesForTasks;
+	protected int currentUnassignedTask;
 	
 	AllWork(){
 		tasks = new Task[10];
@@ -13,11 +13,15 @@ public class AllWork {
 	}
 	
 	void addTask(Task newTask){
-		tasks[freePlacesForTasks-1] = newTask; 
+		tasks[-(freePlacesForTasks-10)] = newTask; 
 		freePlacesForTasks--;
 	}
 	
 	Task getNextTask(){
+		if (currentUnassignedTask > tasks.length) {
+			System.out.println("no more tasks");
+			return null;
+		}
 		return tasks[currentUnassignedTask];
 	}
 	

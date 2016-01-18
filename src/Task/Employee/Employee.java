@@ -61,6 +61,7 @@ public class Employee {
 
 	public void work() {
 		if (this.getCurrentTask() != null) {
+			System.out.println(this.getName() + " start working on task " +  this.getCurrentTask().name);
 			int workingHours = this.currentTask.getWorkingHours()- this.getHoursLeft();
 			if (workingHours < 0) {
 				workingHours = 0;
